@@ -1,0 +1,18 @@
+//这个文件是设置相关页面的UI设计，利用function{} 实现功能设计
+
+page-welcome {
+#welcome{
+    background: color($colors, light);
+
+    h1{
+        font-size: 52px;
+        margin-top: 50px;
+    }
+    .marginTop{
+        margin-top: 70px;
+    }
+    .wlogo{
+        height: 80px;
+    }
+}
+}
