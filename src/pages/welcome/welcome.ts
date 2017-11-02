@@ -1,3 +1,4 @@
+//在Componet后添加 ViewChild
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -17,6 +18,7 @@ import { SignupPage } from '../signup/signup';
   templateUrl: 'welcome.html',
 })
 export class WelcomePage {
+      
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -26,12 +28,14 @@ export class WelcomePage {
   }
    //定向导航到LoginPage，要记住上面的import
   login(){
+  
     this.navCtrl.push(LoginPage);
   }
    
   signup(){
     //定向导航到SignupPage，要记住上面的import
     // {animate:false}的作用是加快页面转化的速度，能够immediately的出现
+    //if()
     this.navCtrl.push(SignupPage,{}, {animate:false});
   }
 }

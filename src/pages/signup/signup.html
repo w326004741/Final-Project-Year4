@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>signup</ion-title>
+    <ion-title>Create Account</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,24 +15,13 @@
 
 <ion-content padding>
   <ion-list>  
-    
-    <ion-item>
-      <ion-label floating>Name</ion-label><!--floating-->
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>Email</ion-label><!--floating-->
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-
     <ion-item>
       <ion-label floating>Username</ion-label><!--floating-->
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" #username></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Password</ion-label>
-      <ion-input type="password" ></ion-input>
+      <ion-input type="password" #password></ion-input>
     </ion-item>
 
     <button ion-button full class="marginTop" (click)="signup()">Signup</button>

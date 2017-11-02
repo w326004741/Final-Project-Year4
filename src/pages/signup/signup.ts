@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+// Add import  AngularFireAuth
+import { AngularFireAuth } from 'angularfire2/auth';
+
 
 //import the TabsPage in here，导航并进入TabsPage
 import { TabsPage } from '../tabs/tabs';
@@ -16,8 +19,13 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
+  //Add 4个@ViewChild 值，该值出自html文件 e.g. #name
+  //@ViewChild('name') name;
+  //@ViewChild('email') email;
+  @ViewChild('username') uname;
+  @ViewChild('password') password;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -28,6 +36,16 @@ export class SignupPage {
     //Api connections
     //定向导航到TabsPage，要记住上面的import
     this.navCtrl.push(TabsPage);
+    //写注册 登陆方法用邮箱
+    this.fire.auth.createUserWithEmailAndPassword(this.uname.value, this.password.value)
+    .then(data => {
+       console.log('got data', data);
+     })
+    .catch(error => {
+       console.log('got an error', error);
+     });
+    console.log('Would register user with ',this.uname.value, this.password.value);
+    
   }
 
 }
