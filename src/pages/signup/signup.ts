@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 // Add import  AngularFireAuth
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -25,14 +25,24 @@ export class SignupPage {
   @ViewChild('username') uname;
   @ViewChild('password') password;
 
-  constructor(private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private alertCtrl: AlertController,private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
 
-  signup(){
+  //弹窗提示
+  alert(message: string){
+    this.alertCtrl.create({
+      title: '😄  Login Successful !',
+         subTitle: message,
+         buttons: ['OK']
+    }).present();
+  }
+
+
+  signup(){       //registerUser()
     //Api connections
     //定向导航到TabsPage，要记住上面的import
     this.navCtrl.push(TabsPage);
@@ -40,9 +50,11 @@ export class SignupPage {
     this.fire.auth.createUserWithEmailAndPassword(this.uname.value, this.password.value)
     .then(data => {
        console.log('got data', data);
+       this.alert('Registered!');
      })
     .catch(error => {
        console.log('got an error', error);
+       this.alert(error.message);
      });
     console.log('Would register user with ',this.uname.value, this.password.value);
     

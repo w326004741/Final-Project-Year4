@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 // is a class name.
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
+import { LoggedinPage } from '../pages/loggedin/loggedin';
 import { SignupPage } from '../pages/signup/signup';
 // Add 2 imports
 import { AngularFireModule } from 'angularfire2';
@@ -39,10 +40,11 @@ const firebaseAuth = {
     WelcomePage,
     LoginPage,
     SignupPage,
+    LoggedinPage,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
   ],
   imports: [
     BrowserModule,
@@ -58,10 +60,11 @@ const firebaseAuth = {
     WelcomePage,
     LoginPage,
     SignupPage,
+    LoggedinPage,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
   ],
   providers: [
     StatusBar,
