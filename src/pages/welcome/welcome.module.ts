@@ -4,7 +4,7 @@ import { WelcomePage } from './welcome';
 
 @NgModule({
   declarations: [
-    WelcomePage,
+    WelcomePage, //声明welcome.ts内的export class名.
   ],
   imports: [
     IonicPageModule.forChild(WelcomePage),

@@ -22,6 +22,8 @@ export class SignupPage {
   //Add 4个@ViewChild 值，该值出自html文件 e.g. #name
   //@ViewChild('name') name;
   //@ViewChild('email') email;
+  //@ViewChild传入一个字符串username, 变量uname接收，其它不变。
+  //@ViewChild传入一个字符串password, 变量password接收，其它不变。
   @ViewChild('username') uname;
   @ViewChild('password') password;
 

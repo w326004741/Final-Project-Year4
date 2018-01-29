@@ -1,7 +1,7 @@
 //这个文件是设置相关页面的UI设计，利用function{} 实现功能设计
-
+//以下的#开头的参数，都是html内的class,必须相同。
 page-welcome {
-#welcome{
+#welcome{    // #welcome 是html页面的id
     background: color($colors, light);
 
     h1{

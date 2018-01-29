@@ -21,6 +21,10 @@ export class LoggedinPage {
   constructor(private fire: AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams) {
     this.email = fire.auth.currentUser.email;
   }
+  // logout按钮， html 添加button
+  // logout() {
+
+  // }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoggedinPage');

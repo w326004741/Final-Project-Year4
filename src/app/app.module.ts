@@ -23,7 +23,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 //Add firebaseAuth
 //Ref: https://console.firebase.google.com/project/netmusic-c9a02/overview?hl=zh-cn
-const firebaseAuth = {
+const firebaseAuth = {  //firebase登陆方法配置
   apiKey: "AIzaSyCWyA_drTwdJ-_N8OA2vajNXfvKxyzh9ks",
   authDomain: "netmusic-c9a02.firebaseapp.com",
   databaseURL: "https://netmusic-c9a02.firebaseio.com",
@@ -33,8 +33,8 @@ const firebaseAuth = {
 };
 
 
-@NgModule({
-  declarations: [
+@NgModule({ //被@NgModule修饰的class都被成为ng Module
+  declarations: [ //声明当前模块需要的指定 组件信息
     MyApp,
     //add 3 pages in here
     WelcomePage,
@@ -46,15 +46,15 @@ const firebaseAuth = {
     HomePage,
     TabsPage,
   ],
-  imports: [
+  imports: [      //导入其他模块，就是要使用其他模块的功能，必须要导入。封装好的。
     BrowserModule,
     IonicModule.forRoot(MyApp),
     // Add 2 imports 
     AngularFireModule.initializeApp(firebaseAuth),
     AngularFireAuthModule
   ],
-  bootstrap: [IonicApp],
-  entryComponents: [
+  bootstrap: [IonicApp], //启动模块or根模块。通常是app启动的根组件。在除了根模块以外的其他模块不能使用。
+  entryComponents: [ //入口组件 懒加载机制，启动时只会启动添加在内的Page。
     MyApp,
    //add 3 pages in here
     WelcomePage,
@@ -66,9 +66,9 @@ const firebaseAuth = {
     HomePage,
     TabsPage,
   ],
-  providers: [
+  providers: [ //服务提供者，主要用来定义服务(service)。
     StatusBar,
-    SplashScreen,
+    SplashScreen, //启动画面
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

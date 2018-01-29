@@ -53,6 +53,9 @@ export class LoginPage {
     // });
     // alert.present(); 
   }
+  // logout() {
+  //   this.fire.auth.signOut();
+  // }
 
 
   ionViewDidLoad() {
