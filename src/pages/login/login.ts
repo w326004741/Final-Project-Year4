@@ -35,6 +35,7 @@ export class LoginPage {
       console.log('got some data', this.fire.auth.currentUser); //传出当前账号用户的信息.
       this.alert('Success! You are logged in');   //弹窗信息.
       this.navCtrl.setRoot( LoggedinPage ); // 设置当前导航堆栈的根目录.可以把LoggedinPage更改为播放器主界面.
+      // setRoot(): 只是view之间的切换，不带有任何返回button之类的东西。 不能返回的
       // user is logged in
     })
     .catch( error => {
