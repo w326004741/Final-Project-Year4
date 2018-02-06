@@ -5,6 +5,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 // import 2 Pages in here
 import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup';
+import { ResetpwdPage } from '../resetpwd/resetpwd';
 /**
  * Generated class for the WelcomePage page.
  *
@@ -37,5 +38,10 @@ export class WelcomePage {
     // {animate:false}的作用是加快页面转化的速度，能够immediately的出现
     //if()
     this.navCtrl.push(SignupPage,{}, {animate:false});
+  }
+
+  //reset password page
+  resetpwd(){
+    this.navCtrl.push(ResetpwdPage);
   }
 }

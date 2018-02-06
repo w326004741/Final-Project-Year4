@@ -8,6 +8,8 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
 import { LoggedinPage } from '../pages/loggedin/loggedin';
 import { SignupPage } from '../pages/signup/signup';
+import { ResetpwdPage} from '../pages/resetpwd/resetpwd';
+
 // Add 2 imports
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -41,6 +43,7 @@ const firebaseAuth = {  //firebase登陆方法配置
     LoginPage,
     SignupPage,
     LoggedinPage,
+    ResetpwdPage,
     AboutPage,
     ContactPage,
     HomePage,
@@ -61,6 +64,7 @@ const firebaseAuth = {  //firebase登陆方法配置
     LoginPage,
     SignupPage,
     LoggedinPage,
+    ResetpwdPage,
     AboutPage,
     ContactPage,
     HomePage,
