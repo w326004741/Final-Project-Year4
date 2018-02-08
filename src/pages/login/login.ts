@@ -29,20 +29,25 @@ export class LoginPage {
     }).present();
   }
 
-  login() {   //  Add 方法
+  login() {   //  Add login function 方法 
+    // firebase.auth.Auth.signInWithEmailAndPassword(email: string, password: string): Promise<any>
+    // this.uname.value => username(email)当前用户的帐号，this.password.value => 当前用户的密码，直接用this.引用了。
     this.fire.auth.signInWithEmailAndPassword(this.uname.value, this.password.value)
     .then( data => {
-      console.log('got some data', this.fire.auth.currentUser); //传出当前账号用户的信息.
-      this.alert('Success! You are logged in');   //弹窗信息.
-      this.navCtrl.setRoot( LoggedinPage ); // 设置当前导航堆栈的根目录.可以把LoggedinPage更改为播放器主界面.
+      console.log('got some data', this.fire.auth.currentUser); //在console传出当前账号用户的信息.
+      this.alert('Success! You are logged in');   //套用当前文件的alert()function中的message,弹窗信息.
+      this.navCtrl.setRoot( LoggedinPage ); // 定向导航到LoggedinPage,且不可返回。如想要返回: 改用navCtrl.push()
+      // 设置当前导航堆栈的根目录.可以把LoggedinPage更改为播放器主界面.
       // setRoot(): 只是view之间的切换，不带有任何返回button之类的东西。 不能返回的
       // user is logged in
     })
     .catch( error => {
-      console.log('got an error', error);
-      this.alert(error.message);
-    })
+      console.log('got an error', error); // if登录信息不匹配，then 在这里报错，并弹出alert信息.error 信息自动生成。
+      this.alert(error.message); // email error: message: "The email address is badly formatted."
+                                // password error: message: "The password is invalid or the user does not have a password"
 
+    })
+    // 登录成功后在console.log中显示 would sign in with + 登录的帐号和密码。
     console.log('Would sign in with ', this.uname.value, this.password.value);
     //console.log(this.uname.value, this.password.value);//Add console.log
     // if(this.uname.value == "admin" && this.password.value == "admin") {}
@@ -54,11 +59,6 @@ export class LoginPage {
     // });
     // alert.present(); 
   }
-  // logout() {
-  //   this.fire.auth.signOut();
-  // }
-
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
