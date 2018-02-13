@@ -4,13 +4,14 @@
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "private": true,
+  "main": "index.js",
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
-    "start": "ionic serve"
+    "start": "node index.js"
   },
   "dependencies": {
     "@angular/common": "4.4.3",
@@ -26,12 +27,15 @@
     "@ionic-native/status-bar": "4.3.0",
     "@ionic/storage": "2.0.1",
     "angularfire2": "^5.0.0-rc.0",
+    "express": "^4.16.2",
     "firebase": "^4.6.0",
     "ionic-angular": "3.7.1",
     "ionicons": "3.0.0",
     "rxjs": "5.4.3",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.18"
+    "zone.js": "0.8.18",
+    "connect": "^3.5.0",
+    "serve-static": "^1.11.1"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.0.0",
