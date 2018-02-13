@@ -24,3 +24,21 @@ $ ionic cordova run ios
 
 Substitute ios for android if not on a Mac.
 
+
+
+## Reference
+[Solution of deploy a Web App of Ionic3 Project to Heroku](https://stackoverflow.com/questions/43701033/ionic-pwa-deploy/43701116)
+
+## Question
+###### *update at 2018/2/13*
+[What is the difference between ionic build & ionic serve](https://github.com/w326004741/Final-Project-Year4)
+
+[What is function of the package.json in Ionic](https://github.com/w326004741/Final-Project-Year4)
+
+[What is function of the main.js in Ionic & Why need to create the main.js file to be deployed](https://github.com/w326004741/Final-Project-Year4)
+
+What is function of the server.js & Why
+
+What is function of `npm start`
+
+What is function of `npm install express --save`
