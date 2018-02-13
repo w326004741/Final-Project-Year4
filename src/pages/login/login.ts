@@ -40,12 +40,13 @@ export class LoginPage {
       // 设置当前导航堆栈的根目录.可以把LoggedinPage更改为播放器主界面.
       // setRoot(): 只是view之间的切换，不带有任何返回button之类的东西。 不能返回的
       // user is logged in
+      
     })
     .catch( error => {
       console.log('got an error', error); // if登录信息不匹配，then 在这里报错，并弹出alert信息.error 信息自动生成。
       this.alert(error.message); // email error: message: "The email address is badly formatted."
                                 // password error: message: "The password is invalid or the user does not have a password"
-
+      
     })
     // 登录成功后在console.log中显示 would sign in with + 登录的帐号和密码。
     console.log('Would sign in with ', this.uname.value, this.password.value);
