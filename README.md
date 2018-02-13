@@ -1,4 +1,7 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# Final-Project-Year4   
+> by - [Weichen Wang](https://github.com/w326004741)
+
+This is a music player web app for [Ionic](http://ionicframework.com/docs/) projects.
 
 ## How to use this template
 
