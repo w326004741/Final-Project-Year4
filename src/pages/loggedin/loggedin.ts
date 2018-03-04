@@ -20,7 +20,7 @@ export class LoggedinPage {
   email: string; //这个email参数在html
   
   constructor(private fire: AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams) {
-    this.email = "Welcome 😄  " + fire.auth.currentUser.email;
+    this.email = fire.auth.currentUser.email;
   }
   // logout按钮， html 添加button
   logout() {

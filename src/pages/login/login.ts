@@ -3,6 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth'; //copy form signup.ts
 import { LoggedinPage } from '../loggedin/loggedin'; // add LoggedinPage.
+import { TabsPage } from '../tabs/tabs';
 
 
 @IonicPage()
@@ -36,7 +37,7 @@ export class LoginPage {
     .then( data => {
       console.log('got some data', this.fire.auth.currentUser); //在console传出当前账号用户的信息.
       this.alert('Success! You are logged in');   //套用当前文件的alert()function中的message,弹窗信息.
-      this.navCtrl.setRoot( LoggedinPage ); // 定向导航到LoggedinPage,且不可返回。如想要返回: 改用navCtrl.push()
+      this.navCtrl.setRoot( TabsPage ); // 定向导航到LoggedinPage,且不可返回。如想要返回: 改用navCtrl.push()
       // 设置当前导航堆栈的根目录.可以把LoggedinPage更改为播放器主界面.
       // setRoot(): 只是view之间的切换，不带有任何返回button之类的东西。 不能返回的
       // user is logged in
