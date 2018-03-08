@@ -25512,6 +25512,13 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-top));
 }
 
+page-about #music .circle {
+  position: relative;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
 .hlogo {
   height: 30px;
   float: left;
