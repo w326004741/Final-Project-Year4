@@ -20,9 +20,10 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+//import { Media, MediaObject } from '@ionic-native/media';
 //Add firebaseAuth
 //Ref: https://console.firebase.google.com/project/netmusic-c9a02/overview?hl=zh-cn
 const firebaseAuth = {  //firebase登陆方法配置
@@ -73,6 +74,9 @@ const firebaseAuth = {  //firebase登陆方法配置
   providers: [ //服务提供者，主要用来定义服务(service)。
     StatusBar,
     SplashScreen, //启动画面
+    LoadingController,
+    // Media,
+    // MediaObject,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

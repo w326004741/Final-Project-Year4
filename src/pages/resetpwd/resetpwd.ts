@@ -24,9 +24,9 @@ export class ResetpwdPage {
 // @ViewChild('username') uname;
 // @ViewChild('resetpassword') resetpwd;
 // @ViewChild('checkpassword') checkpassword;
-email: string; //这个email参数在html
+// email: string; //这个email参数在html
   constructor(private fire:AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams) {
-    this.email = fire.auth.currentUser.email;
+    //this.email = fire.auth.currentUser.email;
   }
   //var auth = firebase.auth();
   

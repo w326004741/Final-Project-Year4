@@ -4,7 +4,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { AngularFireAuth } from 'angularfire2/auth'; //copy form signup.ts
 import { LoggedinPage } from '../loggedin/loggedin'; // add LoggedinPage.
 import { TabsPage } from '../tabs/tabs';
-
+import { LoadingController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -18,7 +18,7 @@ export class LoginPage {
   @ViewChild('password') password;
 
 
-  constructor(private fire:AngularFireAuth, public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  constructor(public loadingCtrl: LoadingController,private fire:AngularFireAuth, public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
   } // 在constructor 里添加了 public alertCtrl: AlertController, private fire:AngularFireAuth
 
   //登陆成功弹窗
@@ -48,7 +48,11 @@ export class LoginPage {
       // 设置当前导航堆栈的根目录.可以把LoggedinPage更改为播放器主界面.
       // setRoot(): 只是view之间的切换，不带有任何返回button之类的东西。 不能返回的
       // user is logged in
-      
+      let loader = this.loadingCtrl.create({
+        content: "Please wait...",
+        duration: 500
+      });
+      loader.present();
     })
     .catch( error => {
       console.log('got an error', error); // if登录信息不匹配，then 在这里报错，并弹出alert信息.error 信息自动生成。

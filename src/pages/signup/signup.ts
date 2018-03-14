@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 // Add import  AngularFireAuth
 import { AngularFireAuth } from 'angularfire2/auth';
-
+import { LoadingController } from 'ionic-angular';
 
 //import the TabsPage in here，导航并进入TabsPage
 import { TabsPage } from '../tabs/tabs';
@@ -28,7 +28,7 @@ export class SignupPage {
   @ViewChild('username') uname;
   @ViewChild('password') password;
 
-  constructor(private alertCtrl: AlertController,private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public loadingCtrl: LoadingController, private alertCtrl: AlertController,private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -38,8 +38,8 @@ export class SignupPage {
   //弹窗提示
   alert(message: string){
     this.alertCtrl.create({
-      title: '😄  Login Successful !',
-         subTitle: message,
+      title: 'Dear User :😱',
+         subTitle: 'Please check enter your email !!! ',
          buttons: ['OK']
     }).present();
   }
@@ -48,19 +48,25 @@ export class SignupPage {
   signup(){       //registerUser()
     //Api connections
     //定向导航到TabsPage，要记住上面的import
-    this.navCtrl.push(LoginPage);
+    // this.navCtrl.push(LoginPage);
     //写注册 登陆方法用邮箱
     this.fire.auth.createUserWithEmailAndPassword(this.uname.value, this.password.value)
     .then(data => {
-       console.log('got data', data);
+       console.log('got data', this.fire.auth.currentUser);
        this.alert('Registered!');
+       this.navCtrl.push(LoginPage);
+       let loader = this.loadingCtrl.create({
+        content: "Please wait...",
+        duration: 500
+      });
+      loader.present();
      })
     .catch(error => {
        console.log('got an error', error);
        this.alert(error.message);
      });
     console.log('Would register user with ',this.uname.value, this.password.value);
-    
+
   }
 
 }
