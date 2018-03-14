@@ -6,6 +6,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 //import the TabsPage in here，导航并进入TabsPage
 import { TabsPage } from '../tabs/tabs';
+import { LoginPage } from "../login/login";
 /**
  * Generated class for the SignupPage page.
  *
@@ -47,7 +48,7 @@ export class SignupPage {
   signup(){       //registerUser()
     //Api connections
     //定向导航到TabsPage，要记住上面的import
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.push(LoginPage);
     //写注册 登陆方法用邮箱
     this.fire.auth.createUserWithEmailAndPassword(this.uname.value, this.password.value)
     .then(data => {

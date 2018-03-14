@@ -24,7 +24,14 @@ export class LoginPage {
   //登陆成功弹窗
   alert(message: string){
     this.alertCtrl.create({
-      title: 'Dear User :😊',
+      title: 'Dear User : 🎉',
+         subTitle: message,
+         buttons: ['OK']
+    }).present();
+  }
+  alert1(message: string){
+    this.alertCtrl.create({
+      title: 'Dear User :😱',
          subTitle: message,
          buttons: ['OK']
     }).present();
@@ -45,7 +52,7 @@ export class LoginPage {
     })
     .catch( error => {
       console.log('got an error', error); // if登录信息不匹配，then 在这里报错，并弹出alert信息.error 信息自动生成。
-      this.alert(error.message); // email error: message: "The email address is badly formatted."
+      this.alert1(error.message); // email error: message: "The email address is badly formatted."
                                 // password error: message: "The password is invalid or the user does not have a password"
       
     })

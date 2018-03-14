@@ -68,103 +68,11 @@ LoggedinPage = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(82);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-// 在import里添加了AlertController。
-
- //copy form signup.ts
-
-var LoginPage = (function () {
-    function LoginPage(fire, navCtrl, navParams, alertCtrl) {
-        this.fire = fire;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-    } // 在constructor 里添加了 public alertCtrl: AlertController, private fire:AngularFireAuth
-    //登陆成功弹窗
-    LoginPage.prototype.alert = function (message) {
-        this.alertCtrl.create({
-            title: 'Dear User :😊',
-            subTitle: message,
-            buttons: ['OK']
-        }).present();
-    };
-    LoginPage.prototype.login = function () {
-        var _this = this;
-        // firebase.auth.Auth.signInWithEmailAndPassword(email: string, password: string): Promise<any>
-        // this.uname.value => username(email)当前用户的帐号，this.password.value => 当前用户的密码，直接用this.引用了。
-        this.fire.auth.signInWithEmailAndPassword(this.uname.value, this.password.value)
-            .then(function (data) {
-            console.log('got some data', _this.fire.auth.currentUser); //在console传出当前账号用户的信息.
-            _this.alert('Success! You are logged in'); //套用当前文件的alert()function中的message,弹窗信息.
-            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__tabs_tabs__["a" /* TabsPage */]); // 定向导航到LoggedinPage,且不可返回。如想要返回: 改用navCtrl.push()
-            // 设置当前导航堆栈的根目录.可以把LoggedinPage更改为播放器主界面.
-            // setRoot(): 只是view之间的切换，不带有任何返回button之类的东西。 不能返回的
-            // user is logged in
-        })
-            .catch(function (error) {
-            console.log('got an error', error); // if登录信息不匹配，then 在这里报错，并弹出alert信息.error 信息自动生成。
-            _this.alert(error.message); // email error: message: "The email address is badly formatted."
-            // password error: message: "The password is invalid or the user does not have a password"
-        });
-        // 登录成功后在console.log中显示 would sign in with + 登录的帐号和密码。
-        console.log('Would sign in with ', this.uname.value, this.password.value);
-        //console.log(this.uname.value, this.password.value);//Add console.log
-        // if(this.uname.value == "admin" && this.password.value == "admin") {}
-        // //Copy ionic document Components-Alerts-Basic Usage(警告弹窗)
-        // let alert = this.alertCtrl.create({  //下面是弹窗内容
-        //   title: '😄  Login Successful !',
-        //   subTitle: 'Happy Day !',
-        //   buttons: ['OK']
-        // });
-        // alert.present(); 
-    };
-    LoginPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LoginPage');
-    };
-    return LoginPage;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('username'),
-    __metadata("design:type", Object)
-], LoginPage.prototype, "uname", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('password'),
-    __metadata("design:type", Object)
-], LoginPage.prototype, "password", void 0);
-LoginPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar >\n      <img src="assets/images/netMusicLogo1.png" class="hlogo" /><ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>  \n    <ion-item>\n      <ion-label floating>Username</ion-label><!--floating-->\n      <ion-input type="text" #username></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label floating>Password</ion-label>\n      <ion-input type="password" #password></ion-input>\n    </ion-item>\n\n    <button ion-button full class="marginTop" (click)="login()">Login</button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/login/login.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], LoginPage);
-
-//# sourceMappingURL=login.js.map
-
-/***/ }),
-
-/***/ 107:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(53);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -178,7 +86,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 // Add import  AngularFireAuth
 
-//import the TabsPage in here，导航并进入TabsPage
 
 /**
  * Generated class for the SignupPage page.
@@ -208,7 +115,7 @@ var SignupPage = (function () {
         var _this = this;
         //Api connections
         //定向导航到TabsPage，要记住上面的import
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__tabs_tabs__["a" /* TabsPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__login_login__["a" /* LoginPage */]);
         //写注册 登陆方法用邮箱
         this.fire.auth.createUserWithEmailAndPassword(this.uname.value, this.password.value)
             .then(function (data) {
@@ -242,7 +149,7 @@ SignupPage = __decorate([
 
 /***/ }),
 
-/***/ 108:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -304,7 +211,7 @@ ResetpwdPage = __decorate([
 
 /***/ }),
 
-/***/ 116:
+/***/ 115:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -317,24 +224,24 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 116;
+webpackEmptyAsyncContext.id = 115;
 
 /***/ }),
 
-/***/ 157:
+/***/ 156:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/loggedin/loggedin.module": [
-		317,
+		318,
 		4
 	],
 	"../pages/login/login.module": [
-		319,
+		317,
 		3
 	],
 	"../pages/resetpwd/resetpwd.module": [
-		318,
+		319,
 		2
 	],
 	"../pages/signup/signup.module": [
@@ -357,8 +264,52 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 157;
+webpackAsyncContext.id = 156;
 module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ 166:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact_contact__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loggedin_loggedin__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(33);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var TabsPage = (function () {
+    function TabsPage(fire) {
+        this.fire = fire;
+        this.tab1Root = __WEBPACK_IMPORTED_MODULE_3__loggedin_loggedin__["a" /* LoggedinPage */];
+        this.tab2Root = __WEBPACK_IMPORTED_MODULE_1__about_about__["a" /* AboutPage */];
+        this.tab3Root = __WEBPACK_IMPORTED_MODULE_2__contact_contact__["a" /* ContactPage */];
+        this.email = fire.auth.currentUser.email;
+    }
+    return TabsPage;
+}());
+TabsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Music" tabIcon="musical-notes"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/tabs/tabs.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */]])
+], TabsPage);
+
+//# sourceMappingURL=tabs.js.map
 
 /***/ }),
 
@@ -423,7 +374,7 @@ var ContactPage = (function () {
 }());
 ContactPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-contact',template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/contact/contact.html"*/'<ion-header>\n    <ion-navbar>\n        <img src="assets/images/netMusicLogo1.png" class="hlogo" />\n        <ion-title>Contact</ion-title>\n      </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Follow us on Twitter</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item-start></ion-icon>\n      @ionicframework\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/contact/contact.html"*/
+        selector: 'page-contact',template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/contact/contact.html"*/'<ion-header>\n    <ion-navbar>\n        <img src="assets/images/netMusicLogo1.png" class="hlogo" />\n        <ion-title>Contact</ion-title>\n      </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <!-- <ion-list-header>Follow us on Twitter</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item-start></ion-icon>\n      @ionicframework\n    </ion-item> -->\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/contact/contact.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], ContactPage);
@@ -456,16 +407,16 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(307);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_welcome_welcome__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_loggedin_loggedin__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_signup_signup__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_resetpwd_resetpwd__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_signup_signup__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_resetpwd_resetpwd__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_auth__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_about_about__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_contact_contact__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_home_home__ = __webpack_require__(316);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_tabs_tabs__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_tabs_tabs__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_status_bar__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_splash_screen__ = __webpack_require__(211);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -528,9 +479,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                 links: [
+                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/loggedin/loggedin.module#LoggedinPageModule', name: 'LoggedinPage', segment: 'loggedin', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/resetpwd/resetpwd.module#ResetpwdPageModule', name: 'ResetpwdPage', segment: 'resetpwd', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] }
                 ]
@@ -662,9 +613,9 @@ HomePage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WelcomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__signup_signup__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resetpwd_resetpwd__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__signup_signup__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resetpwd_resetpwd__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -722,16 +673,15 @@ WelcomePage = __decorate([
 
 /***/ }),
 
-/***/ 82:
+/***/ 53:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact_contact__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loggedin_loggedin__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(166);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -742,27 +692,83 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+// 在import里添加了AlertController。
 
+ //copy form signup.ts
 
-
-
-var TabsPage = (function () {
-    function TabsPage(fire) {
+var LoginPage = (function () {
+    function LoginPage(fire, navCtrl, navParams, alertCtrl) {
         this.fire = fire;
-        this.tab1Root = __WEBPACK_IMPORTED_MODULE_3__loggedin_loggedin__["a" /* LoggedinPage */];
-        this.tab2Root = __WEBPACK_IMPORTED_MODULE_1__about_about__["a" /* AboutPage */];
-        this.tab3Root = __WEBPACK_IMPORTED_MODULE_2__contact_contact__["a" /* ContactPage */];
-        this.email = fire.auth.currentUser.email;
-    }
-    return TabsPage;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+    } // 在constructor 里添加了 public alertCtrl: AlertController, private fire:AngularFireAuth
+    //登陆成功弹窗
+    LoginPage.prototype.alert = function (message) {
+        this.alertCtrl.create({
+            title: 'Dear User : 🎉',
+            subTitle: message,
+            buttons: ['OK']
+        }).present();
+    };
+    LoginPage.prototype.alert1 = function (message) {
+        this.alertCtrl.create({
+            title: 'Dear User :😱',
+            subTitle: message,
+            buttons: ['OK']
+        }).present();
+    };
+    LoginPage.prototype.login = function () {
+        var _this = this;
+        // firebase.auth.Auth.signInWithEmailAndPassword(email: string, password: string): Promise<any>
+        // this.uname.value => username(email)当前用户的帐号，this.password.value => 当前用户的密码，直接用this.引用了。
+        this.fire.auth.signInWithEmailAndPassword(this.uname.value, this.password.value)
+            .then(function (data) {
+            console.log('got some data', _this.fire.auth.currentUser); //在console传出当前账号用户的信息.
+            _this.alert('Success! You are logged in'); //套用当前文件的alert()function中的message,弹窗信息.
+            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__tabs_tabs__["a" /* TabsPage */]); // 定向导航到LoggedinPage,且不可返回。如想要返回: 改用navCtrl.push()
+            // 设置当前导航堆栈的根目录.可以把LoggedinPage更改为播放器主界面.
+            // setRoot(): 只是view之间的切换，不带有任何返回button之类的东西。 不能返回的
+            // user is logged in
+        })
+            .catch(function (error) {
+            console.log('got an error', error); // if登录信息不匹配，then 在这里报错，并弹出alert信息.error 信息自动生成。
+            _this.alert1(error.message); // email error: message: "The email address is badly formatted."
+            // password error: message: "The password is invalid or the user does not have a password"
+        });
+        // 登录成功后在console.log中显示 would sign in with + 登录的帐号和密码。
+        console.log('Would sign in with ', this.uname.value, this.password.value);
+        //console.log(this.uname.value, this.password.value);//Add console.log
+        // if(this.uname.value == "admin" && this.password.value == "admin") {}
+        // //Copy ionic document Components-Alerts-Basic Usage(警告弹窗)
+        // let alert = this.alertCtrl.create({  //下面是弹窗内容
+        //   title: '😄  Login Successful !',
+        //   subTitle: 'Happy Day !',
+        //   buttons: ['OK']
+        // });
+        // alert.present(); 
+    };
+    LoginPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LoginPage');
+    };
+    return LoginPage;
 }());
-TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Music" tabIcon="musical-notes"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/tabs/tabs.html"*/
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('username'),
+    __metadata("design:type", Object)
+], LoginPage.prototype, "uname", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('password'),
+    __metadata("design:type", Object)
+], LoginPage.prototype, "password", void 0);
+LoginPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-login',template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar >\n      <img src="assets/images/netMusicLogo1.png" class="hlogo" /><ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>  \n    <ion-item>\n      <ion-label floating>Username</ion-label><!--floating-->\n      <ion-input type="text" #username></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label floating>Password</ion-label>\n      <ion-input type="password" #password></ion-input>\n    </ion-item>\n\n    <button ion-button full class="marginTop" (click)="login()">Login</button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/login/login.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */]])
-], TabsPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+], LoginPage);
 
-//# sourceMappingURL=tabs.js.map
+//# sourceMappingURL=login.js.map
 
 /***/ })
 

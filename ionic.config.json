@@ -2,5 +2,7 @@
   "name": "myNetMusic",
   "app_id": "403f950b",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }
