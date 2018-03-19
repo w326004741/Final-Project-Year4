@@ -220,6 +220,14 @@ module.exports = [
     "clobbers": [
       "window.Media"
     ]
+  },
+  {
+    "id": "com.hutchind.cordova.plugins.streamingmedia.StreamingMedia",
+    "file": "plugins/com.hutchind.cordova.plugins.streamingmedia/www/StreamingMedia.js",
+    "pluginId": "com.hutchind.cordova.plugins.streamingmedia",
+    "clobbers": [
+      "streamingMedia"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -227,7 +235,8 @@ module.exports.metadata =
 {
   "cordova-plugin-geolocation": "4.0.1",
   "cordova-plugin-file": "6.0.1",
-  "cordova-plugin-media": "5.0.2"
+  "cordova-plugin-media": "5.0.2",
+  "com.hutchind.cordova.plugins.streamingmedia": "0.1.4"
 };
 // BOTTOM OF METADATA
 });

@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-
+import { App } from 'ionic-angular';
 import { WelcomePage } from '../welcome/welcome';
 /**
  * Generated class for the LoggedinPage page.
@@ -19,7 +19,7 @@ export class LoggedinPage {
 
   email: string; //这个email参数在html
   
-  constructor(private fire: AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private app: App, private fire: AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams) {
     this.email = fire.auth.currentUser.email;
   }
   // logout按钮， html 添加button
@@ -31,7 +31,8 @@ export class LoggedinPage {
     // 2、params 参数：像下一个页面传递参数 Object类型 
     // 3、过度完成。返回一个promise
     window.localStorage.removeItem(this.email);
-    this.navCtrl.setRoot(WelcomePage);
+    // this.navCtrl.setRoot(WelcomePage);
+    this.app.getRootNav().setRoot(WelcomePage);
     console.log(this.fire.auth.currentUser);
     //window.localStorage.removeItem('email');
   }

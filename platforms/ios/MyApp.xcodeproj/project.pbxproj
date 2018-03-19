@@ -22,6 +22,8 @@
 		3F72B61367174350B2B4FD16 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E5164AC27C5943E193C40476 /* CDVLocalFilesystem.m */; };
 		FEDFF8447B6B40E4A637F328 /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 633F117532424895BA190012 /* CDVAssetLibraryFilesystem.m */; };
 		B4E73EB1B03D477BB5C5E8EF /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = A09BF8E242CA4B2B8D62F979 /* CDVSound.m */; };
+		7463BC2CD8414CC4ACBCB861 /* StreamingMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = F147CA16A8D34101A98C2D8F /* StreamingMedia.m */; };
+		92AE2C56D1EC48BCB76C52AC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EBD6F1B8174CBA94460503 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,9 @@
 		71C2330BA34F4A9FA9A4FB87 /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; name = "CDVAssetLibraryFilesystem.h"; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		A09BF8E242CA4B2B8D62F979 /* CDVSound.m */ = {isa = PBXFileReference; name = "CDVSound.m"; path = "cordova-plugin-media/CDVSound.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		BE4065A9B9DF4C3C9446CA3A /* CDVSound.h */ = {isa = PBXFileReference; name = "CDVSound.h"; path = "cordova-plugin-media/CDVSound.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		F147CA16A8D34101A98C2D8F /* StreamingMedia.m */ = {isa = PBXFileReference; name = "StreamingMedia.m"; path = "com.hutchind.cordova.plugins.streamingmedia/StreamingMedia.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		36BA1755371A4210A50E9EFE /* StreamingMedia.h */ = {isa = PBXFileReference; name = "StreamingMedia.h"; path = "com.hutchind.cordova.plugins.streamingmedia/StreamingMedia.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		52EBD6F1B8174CBA94460503 /* MediaPlayer.framework */ = {isa = PBXFileReference; name = "MediaPlayer.framework"; path = "System/Library/Frameworks/MediaPlayer.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +87,7 @@
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				9D852F16AA494C7F9C13415E /* CoreLocation.framework in Frameworks */,
+				92AE2C56D1EC48BCB76C52AC /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				E90B0C0C62A94D9C8D1EC792 /* CoreLocation.framework */,
+				52EBD6F1B8174CBA94460503 /* MediaPlayer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -188,6 +195,8 @@
 				71C2330BA34F4A9FA9A4FB87 /* CDVAssetLibraryFilesystem.h */,
 				A09BF8E242CA4B2B8D62F979 /* CDVSound.m */,
 				BE4065A9B9DF4C3C9446CA3A /* CDVSound.h */,
+				F147CA16A8D34101A98C2D8F /* StreamingMedia.m */,
+				36BA1755371A4210A50E9EFE /* StreamingMedia.h */,
 			);
 			name = Plugins;
 			path = "MyApp/Plugins";
@@ -305,6 +314,7 @@
 				3F72B61367174350B2B4FD16 /* CDVLocalFilesystem.m in Sources */,
 				FEDFF8447B6B40E4A637F328 /* CDVAssetLibraryFilesystem.m in Sources */,
 				B4E73EB1B03D477BB5C5E8EF /* CDVSound.m in Sources */,
+				7463BC2CD8414CC4ACBCB861 /* StreamingMedia.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

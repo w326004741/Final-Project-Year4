@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { App } from 'ionic-angular';
 //add 3 import page in here,and the {WelcomePage} from welcome.ts file
 // is a class name.
 import { WelcomePage } from '../pages/welcome/welcome';
@@ -23,7 +24,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-//import { Media, MediaObject } from '@ionic-native/media';
+import { StreamingMedia } from '@ionic-native/streaming-media';
+// import { Media } from '@ionic-native/media';
 //Add firebaseAuth
 //Ref: https://console.firebase.google.com/project/netmusic-c9a02/overview?hl=zh-cn
 const firebaseAuth = {  //firebase登陆方法配置
@@ -75,6 +77,8 @@ const firebaseAuth = {  //firebase登陆方法配置
     StatusBar,
     SplashScreen, //启动画面
     LoadingController,
+    StreamingMedia,
+    App,
     // Media,
     // MediaObject,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
