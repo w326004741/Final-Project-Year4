@@ -18,7 +18,7 @@ export class ContactPage {
       errorCallback: (e) => {console.log('Error: ', e)},
       orientation: 'portrait'
     };
-    this.streamingMedia.playVideo('https://www.youtube.com/watch?v=HjxYvcdpVnU', options);
+    this.streamingMedia.playVideo('http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4', options);
   }
   startAudio(){
     let options: StreamingAudioOptions = {
@@ -26,7 +26,7 @@ export class ContactPage {
       errorCallback: (e) => {console.log('Error: ', e)},
       initFullscreen: false, // IOS only!
     };
-    this.streamingMedia.playAudio('www/https://open.spotify.com/user/spotify/playlist/37i9dQZF1DXcDoDDetPsEg', options);
+    this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/%E5%90%B4%E4%BA%A6%E5%87%A1%20-%20JULY.mp3', options);
   }
   
   stopAudio(){

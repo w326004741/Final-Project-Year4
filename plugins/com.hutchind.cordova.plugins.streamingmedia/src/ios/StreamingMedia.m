@@ -169,7 +169,8 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
 }
 
 -(void)startPlayer:(NSString*)uri {
-	NSURL *url = [NSURL URLWithString:uri];
+	NSString *utf8Uri = [uri stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSURL *url = [NSURL URLWithString:utf8Uri];
 
 	moviePlayer =  [[MPMoviePlayerController alloc] initWithContentURL:url];
 

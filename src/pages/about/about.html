@@ -12,8 +12,12 @@
             <ion-icon name='skip-backward'></ion-icon>
           </button>
 
-        <button ion-button  class="circle" color="danger" icon-only  small>
+        <button ion-button (click)="playAudio()"  class="circle" color="danger" icon-only  small>
             <ion-icon name='play' style="zoom:1.0;"></ion-icon>
+            <!-- style="zoom:1.0;" and small: setting icon size -->
+          </button>
+          <button ion-button (click)="stopAudio()"  class="circle" color="danger" icon-only  small>
+            <ion-icon name='pause' style="zoom:1.0;"></ion-icon>
             <!-- style="zoom:1.0;" and small: setting icon size -->
           </button>
 
