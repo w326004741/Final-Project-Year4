@@ -7,13 +7,13 @@
 <ion-header>
 
   <ion-navbar>
-      <img src="assets/images/netMusicLogo1.png" class="hlogo" /><ion-title>Reset Password</ion-title>
+      <ion-title>Reset Password</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list>
+  <!-- <ion-list>
     <ion-item>
       <ion-label floating>Username</ion-label>
       <ion-input type="text" #username></ion-input>
@@ -27,21 +27,13 @@
     <ion-item>
       <ion-label floating>Check Password</ion-label>
       <ion-input type="password" #checkpassword></ion-input>
+    </ion-item> -->
+    <ion-item>
+      <ion-label floating>Email Address</ion-label>>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
+
     </ion-item>
     
     <button ion-button full class="marginTop" (click)="resetpassword()">Reset Password</button>
-  </ion-list>
+  <!-- </ion-list> -->
 </ion-content>
-
-<!-- <form [formGroup]="resetPasswordForm" (submit)="resetPassword()" novalidate>
-  <ion-item>
-    <ion-label stacked>Email</ion-label>
-    <ion-input formControlName="email" type="email" placeholder="Your email address"
-    [class.invalid]="!resetPasswordForm.controls.email.valid && blur">
-    </ion-input>
-  </ion-item>
-
-  <button ion-button block type="submit" [disabled]="!resetPasswordForm.valid">
-    Reset Your Password  
-  </button>
-</form> -->

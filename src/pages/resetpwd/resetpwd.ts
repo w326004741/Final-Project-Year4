@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 //import { AuthProvider} from '../../providers/auth/auth';
 import { ViewChild } from '@angular/core/src/metadata/di';
-// import { FirebaseApp } from 'angularfire2';
-//import firebase from 'firebase';
-//import { AuthProvider} from '../../providers/auth/auth'
-//import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { Injectable } from '@angular/core';
+import * as firebase from 'firebase';
+import { ToastController } from 'ionic-angular';
+
 
 /**
  * Generated class for the ResetpwdPage page.
@@ -20,32 +20,42 @@ import { ViewChild } from '@angular/core/src/metadata/di';
   selector: 'page-resetpwd',
   templateUrl: 'resetpwd.html',
 })
+
+// @Injectable()
 export class ResetpwdPage {
-  // public fireAuth: any;
-  // public useData: any;
-// @ViewChild('username') uname;
-// @ViewChild('resetpassword') resetpwd;
-// @ViewChild('checkpassword') checkpassword;
-// email: string; //这个email参数在html
-  constructor(private fire:AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams) {
-    //this.email = fire.auth.currentUser.email;
-    // this.fireAuth = firebase.auth();
-    // this.useData = firebase.database().ref('/userData');
+  email: string;
+  position : string;
+
+  constructor(public alertCtrl: AlertController,public toastCtrl: ToastController,private fire:AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams) {
   }
-  //var auth = firebase.auth();
+  alert(message: string){
+    this.alertCtrl.create({
+      title: 'Dear User :😱',
+         subTitle: 'Please enter the correct email!!! ',
+         buttons: ['OK']
+    }).present();
+  }
   
-   resetpassword(){
-  //   return this.fireAuth.sendPasswordResetEmail(email);
-    // this.fire.auth.sendPasswordResetEmail(this.email)
-    // .then( date => {
-    //   console.log('got some data', this.fire.auth.verifyPasswordResetCode);
-    // }).catch(error => {
-    //   console.log('got an error', error)
-    // });
+  resetpassword(){
+    this.fire.auth.sendPasswordResetEmail(this.email)
+    .then(date => {
+      console.log('send email');
+      let toast = this.toastCtrl.create({
+        message: 'Congratulations🎉!! Please check your email to change your new password.',
+        duration: 3000,
+        position: this.position
+      });
+      toast.present(toast);
+    })
+    .catch(error => {
+      console.log('got an error', error);
+      this.alert(error.message);
+    });
+
+
+
+
   }
-
-
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResetpwdPage');
