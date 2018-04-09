@@ -267,7 +267,7 @@ var map = {
 		3
 	],
 	"../pages/resetpwd/resetpwd.module": [
-		321,
+		322,
 		2
 	],
 	"../pages/signup/signup.module": [
@@ -275,7 +275,7 @@ var map = {
 		1
 	],
 	"../pages/welcome/welcome.module": [
-		322,
+		321,
 		0
 	]
 };
@@ -364,7 +364,7 @@ var AboutPage = (function () {
         this.streamingMedia = streamingMedia;
         this.navCtrl = navCtrl;
     }
-    AboutPage.prototype.playAudio = function () {
+    AboutPage.prototype.play = function () {
         var options = {
             successCallback: function () { console.log('Finished Audio'); },
             errorCallback: function (e) { console.log('Error: ', e); },
@@ -372,18 +372,77 @@ var AboutPage = (function () {
         };
         this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/%E5%90%B4%E4%BA%A6%E5%87%A1%20-%20JULY.mp3', options);
     };
-    AboutPage.prototype.stopAudio = function () {
+    AboutPage.prototype.play1 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Charlie%20Puth%20-%20Attention.mp3', options);
+    };
+    AboutPage.prototype.play2 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Ed%20Sheeran%20-%20Galway%20Girl.mp3', options);
+    };
+    AboutPage.prototype.play3 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Ed%20Sheeran%20-%20Shape%20of%20You.mp3', options);
+    };
+    AboutPage.prototype.play4 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Ed%20Sheeran%20-%20What%20Do%20I%20Know%EF%BC%9F.mp3', options);
+    };
+    AboutPage.prototype.play5 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Russ%20-%20Psycho%20(Pt.%202).mp3', options);
+    };
+    AboutPage.prototype.play6 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Charlie%20Puth,Selena%20Gomez%20-%20We%20Dont%20Talk%20Anymore.mp3', options);
+    };
+    AboutPage.prototype.stop = function () {
         this.streamingMedia.stopAudio();
     };
     return AboutPage;
 }());
 AboutPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-about',template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar>\n      <img src="assets/images/netMusicLogo1.png" class="hlogo" />\n      <ion-title>Music</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding id="music">\n  <ion-list>\n    <ion-item>\n        <button ion-button class="circle" color="danger" small>\n            <ion-icon name=\'skip-backward\'></ion-icon>\n          </button>\n\n        <button ion-button (click)="playAudio()"  class="circle" color="danger" icon-only  small>\n            <ion-icon name=\'play\' style="zoom:1.0;"></ion-icon>\n            <!-- style="zoom:1.0;" and small: setting icon size -->\n          </button>\n          <button ion-button (click)="stopAudio()"  class="circle" color="danger" icon-only  small>\n            <ion-icon name=\'pause\' style="zoom:1.0;"></ion-icon>\n            <!-- style="zoom:1.0;" and small: setting icon size -->\n          </button>\n\n          <button ion-button  class="circle" color="danger">\n              <ion-icon name=\'skip-forward\'></ion-icon>\n            </button>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/about/about.html"*/
+        selector: 'page-about',template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar color="danger">\n      <ion-title >PlayList</ion-title>\n      <!-- <img src="assets/images/netMusicLogo1.png" class="hlogo" />\n      <ion-title>Music</ion-title> -->\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding id="music">\n    <ion-list>\n\n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-july.png">\n          </ion-thumbnail>\n          <h2>July</h2>\n          <p>Kris Wu • 2017</p>\n          <button ion-button (click)="play()" clear item-end>Play</button>\n          <button ion-button (click)="stop()" clear item-end>Stop</button>\n        </ion-item>\n\n        <ion-item>\n            <ion-thumbnail item-start>\n              <img src="assets/images/thumbnail-attention.png">\n            </ion-thumbnail>\n            <h2>Attention</h2>\n            <p>Charlie Puth • 2017</p>\n            <button ion-button (click)="play1()" clear item-end>Play</button>\n            <button ion-button (click)="stop()" clear item-end>Stop</button>\n          </ion-item>\n\n          <ion-item>\n              <ion-thumbnail item-start>\n                <img src="assets/images/thumbnail-galwaygirl.png">\n              </ion-thumbnail>\n              <h2>Galway Girl</h2>\n              <p>Ed Sheeran • 2017</p>\n              <button ion-button (click)="play2()" clear item-end>Play</button>\n              <button ion-button (click)="stop()" clear item-end>Stop</button>\n            </ion-item>\n\n            <ion-item>\n                <ion-thumbnail item-start>\n                  <img src="assets/images/thumbnail-galwaygirl.png">\n                </ion-thumbnail>\n                <h2>Shape of You</h2>\n                <p>Ed Sheeran • 2017</p>\n                <button ion-button (click)="play3()" clear item-end>Play</button>\n                <button ion-button (click)="stop()" clear item-end>Stop</button>\n              </ion-item>\n\n              <ion-item>\n                  <ion-thumbnail item-start>\n                    <img src="assets/images/thumbnail-galwaygirl.png">\n                  </ion-thumbnail>\n                  <h2>Galway Girl</h2>\n                  <p>Ed Sheeran • 2017</p>\n                  <button ion-button (click)="play4()" clear item-end>Play</button>\n                  <button ion-button (click)="stop()" clear item-end>Stop</button>\n                </ion-item>\n\n\n              <ion-item>\n                  <ion-thumbnail item-start>\n                    <img src="assets/images/thumbnail-psycho.png">\n                  </ion-thumbnail>\n                  <h2>Psycho</h2>\n                  <p>Rush • 2017</p>\n                  <button ion-button (click)="play5()" clear item-end>Play</button>\n                  <button ion-button (click)="stop()" clear item-end>Stop</button>\n                </ion-item>\n\n\n              <ion-item>\n                  <ion-thumbnail item-start>\n                    <img src="assets/images/thumbnail-weanymore.png">\n                  </ion-thumbnail>\n                  <h2>We Don\'t Talk Anymore</h2>\n                  <p>Charlie Puth • 2017</p>\n                  <button ion-button (click)="play6()" clear item-end>Play</button>\n                  <button ion-button (click)="stop()" clear item-end>Stop</button>\n                </ion-item>\n        <!-- <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-rotla.png">\n          </ion-thumbnail>\n          <h2>Raiders of the Lost Ark</h2>\n          <p>Steven Spielberg • 1981</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-ghostbusters.png">\n          </ion-thumbnail>\n          <h2>Ghostbusters</h2>\n          <p>Ivan Reitman • 1984</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-batman.png">\n          </ion-thumbnail>\n          <h2>Batman</h2>\n          <p>Tim Burton • 1988</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-bttf.png">\n          </ion-thumbnail>\n          <h2>Back to the Future</h2>\n          <p>Robert Zemeckis • 1985</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-esb.png">\n          </ion-thumbnail>\n          <h2>The Empire Strikes Back</h2>\n          <p>Irvin Kershner • 1980</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-terminator.png">\n          </ion-thumbnail>\n          <h2>The Terminator</h2>\n          <p>James Cameron • 1984</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n     -->\n      </ion-list>\n</ion-content>\n\n\n<!-- <ion-list>\n  <ion-item>\n      <button ion-button class="circle" color="danger" small>\n          <ion-icon name=\'skip-backward\'></ion-icon>\n        </button>\n\n      <button ion-button (click)="playAudio()"  class="circle" color="danger" icon-only  small>\n          <ion-icon name=\'play\' style="zoom:1.0;"></ion-icon>\n          <!-- style="zoom:1.0;" and small: setting icon size -->\n        <!-- </button>\n        <button ion-button (click)="stopAudio()"  class="circle" color="danger" icon-only  small>\n          <ion-icon name=\'pause\' style="zoom:1.0;"></ion-icon>\n          <!-- style="zoom:1.0;" and small: setting icon size -->\n        <!-- </button> -->\n\n        <!-- <button ion-button  class="circle" color="danger">\n            <ion-icon name=\'skip-forward\'></ion-icon>\n          </button> -->\n  <!-- </ion-item>\n</ion-list> -->'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/about/about.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__["a" /* StreamingMedia */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
 ], AboutPage);
 
+// playAudio(){
+//   let options: StreamingAudioOptions = {
+//     successCallback: () => {console.log('Finished Audio')},
+//     errorCallback: (e) => {console.log('Error: ', e)},
+//     initFullscreen: false, // IOS only!
+//   };
+//   this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/%E5%90%B4%E4%BA%A6%E5%87%A1%20-%20JULY.mp3', options);
+// }
+// stopAudio(){
+//   this.streamingMedia.stopAudio();
+// } 
 //# sourceMappingURL=about.js.map
 
 /***/ }),
@@ -558,8 +617,8 @@ AppModule = __decorate([
                     { loadChildren: '../pages/loggedin/loggedin.module#LoggedinPageModule', name: 'LoggedinPage', segment: 'loggedin', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/resetpwd/resetpwd.module#ResetpwdPageModule', name: 'ResetpwdPage', segment: 'resetpwd', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/resetpwd/resetpwd.module#ResetpwdPageModule', name: 'ResetpwdPage', segment: 'resetpwd', priority: 'low', defaultHistory: [] }
                 ]
             }),
             // Add 2 imports 
