@@ -12,13 +12,15 @@ import { LoadingController } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
+  
+  
   // Add @ViewChild  username & password
   @ViewChild('username') uname;
   @ViewChild('password') password;
 
 
   constructor(public loadingCtrl: LoadingController,private fire:AngularFireAuth, public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+    
   } // 在constructor 里添加了 public alertCtrl: AlertController, private fire:AngularFireAuth
 
   //登陆成功弹窗
@@ -43,7 +45,7 @@ export class LoginPage {
     this.fire.auth.signInWithEmailAndPassword(this.uname.value, this.password.value)
     .then( data => {
       console.log('got some data', this.fire.auth.currentUser); //在console传出当前账号用户的信息.
-      this.alert('Success! You are logged in');   //套用当前文件的alert()function中的message,弹窗信息.
+      this.alert('Welcome to NetMusic ' + this.fire.auth.currentUser.email);   //套用当前文件的alert()function中的message,弹窗信息.
       this.navCtrl.setRoot( TabsPage ); // 定向导航到LoggedinPage,且不可返回。如想要返回: 改用navCtrl.push()
       // 设置当前导航堆栈的根目录.可以把LoggedinPage更改为播放器主界面.
       // setRoot(): 只是view之间的切换，不带有任何返回button之类的东西。 不能返回的

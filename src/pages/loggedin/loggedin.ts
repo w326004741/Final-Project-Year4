@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { App } from 'ionic-angular';
 import { WelcomePage } from '../welcome/welcome';
+import { AboutPage } from '../about/about';
+import { StreamingMedia, StreamingAudioOptions, StreamingVideoOptions } from '@ionic-native/streaming-media';
+
 /**
  * Generated class for the LoggedinPage page.
  *
@@ -19,7 +22,7 @@ export class LoggedinPage {
 
   email: string; //这个email参数在html
   
-  constructor(private app: App, private fire: AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public streamingMedia: StreamingMedia,private app: App, private fire: AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams) {
     this.email = fire.auth.currentUser.email;
   }
   // logout按钮， html 添加button
@@ -36,6 +39,17 @@ export class LoggedinPage {
     console.log(this.fire.auth.currentUser);
     //window.localStorage.removeItem('email');
   }
+
+  listen(){
+    this.navCtrl.push(AboutPage);
+    let options: StreamingAudioOptions = {
+      successCallback: () => {console.log('Finished Audio')},
+      errorCallback: (e) => {console.log('Error: ', e)},
+      initFullscreen: false, // IOS only!
+    };
+    this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Linkin%20Park%20-%20Leave%20Out%20All%20the%20Rest%20(One%20More%20Light%20Live).mp3', options);
+    }
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoggedinPage');

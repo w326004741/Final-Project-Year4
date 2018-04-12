@@ -8,7 +8,7 @@ import { StreamingMedia, StreamingAudioOptions, StreamingVideoOptions } from '@i
 })
 export class AboutPage {
 
-  constructor(private streamingMedia: StreamingMedia,public navCtrl: NavController) {
+  constructor(public streamingMedia: StreamingMedia,public navCtrl: NavController) {
   }
 
   play(){
@@ -76,8 +76,17 @@ export class AboutPage {
     initFullscreen: false, // IOS only!
   };
   this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Charlie%20Puth,Selena%20Gomez%20-%20We%20Dont%20Talk%20Anymore.mp3', options);
-
   }
+
+  play7(){
+    let options: StreamingAudioOptions = {
+    successCallback: () => {console.log('Finished Audio')},
+    errorCallback: (e) => {console.log('Error: ', e)},
+    initFullscreen: false, // IOS only!
+  };
+  this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Linkin%20Park%20-%20Leave%20Out%20All%20the%20Rest%20(One%20More%20Light%20Live).mp3', options);
+  }
+
   stop(){
     this.streamingMedia.stopAudio();
   }

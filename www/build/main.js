@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 107:
+/***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,6 +9,8 @@ webpackJsonp([5],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__welcome_welcome__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__about_about__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_streaming_media__ = __webpack_require__(49);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -23,6 +25,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 /**
  * Generated class for the LoggedinPage page.
  *
@@ -30,7 +34,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var LoggedinPage = (function () {
-    function LoggedinPage(app, fire, navCtrl, navParams) {
+    function LoggedinPage(streamingMedia, app, fire, navCtrl, navParams) {
+        this.streamingMedia = streamingMedia;
         this.app = app;
         this.fire = fire;
         this.navCtrl = navCtrl;
@@ -51,6 +56,15 @@ var LoggedinPage = (function () {
         console.log(this.fire.auth.currentUser);
         //window.localStorage.removeItem('email');
     };
+    LoggedinPage.prototype.listen = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__about_about__["a" /* AboutPage */]);
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Linkin%20Park%20-%20Leave%20Out%20All%20the%20Rest%20(One%20More%20Light%20Live).mp3', options);
+    };
     LoggedinPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad LoggedinPage');
     };
@@ -58,16 +72,16 @@ var LoggedinPage = (function () {
 }());
 LoggedinPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-loggedin',template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/loggedin/loggedin.html"*/'<!--\n  Generated template for the LoggedinPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n      <img src="assets/images/netMusicLogo1.png" class="hlogo" /><ion-title>Home</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <h2>Welcome to NetMusic {{email}}!!</h2>\n  <br /> \n  <!-- 在这里添加一个logout按钮，功能是退出登录  https://ionicframework.com/docs/components/#buttons-->\n  <button ion-button  (click)="logout()">Logout</button>\n</ion-content>\n'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/loggedin/loggedin.html"*/,
+        selector: 'page-loggedin',template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/loggedin/loggedin.html"*/'<!--\n  Generated template for the LoggedinPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n      <img src="assets/images/netMusicLogo1.png" class="hlogo" /><ion-title>Home</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="card-bg">\n    <!-- <h3>Welcome to NetMusic {{email}}!!</h3> -->\n  <!-- <br />  -->\n  <ion-card>\n\n    <img src="assets/images/link.png"/>\n\n    <ion-card-content>\n      <ion-card-title>\n       Linkin Park Live\n      </ion-card-title>\n      <p>\n       We Love You and Miss You Chester. Your absence leaves a void that can never be filled.\n       </p>\n    </ion-card-content>\n\n    <ion-row no-padding>\n      <ion-col>\n        <button ion-button clear small color="danger" icon-start>\n          <ion-icon name=\'star\'></ion-icon>\n          Favorite\n        </button>\n      </ion-col>\n      <ion-col text-center>\n        <button ion-button clear small (click)="listen()" color="danger" icon-start>\n          <ion-icon name=\'musical-notes\'></ion-icon>\n          Listen\n        </button>\n      </ion-col>\n      <ion-col text-right>\n        <button ion-button clear small color="danger" icon-start>\n          <ion-icon name=\'share-alt\'></ion-icon>\n          Share\n        </button>\n      </ion-col>\n    </ion-row>\n\n  </ion-card>\n  <!-- 在这里添加一个logout按钮，功能是退出登录  https://ionicframework.com/docs/components/#buttons-->\n  <div id=\'logoutbtn\'>\n  <button ion-button small (click)="logout()">Logout</button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/loggedin/loggedin.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__ionic_native_streaming_media__["a" /* StreamingMedia */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
 ], LoggedinPage);
 
 //# sourceMappingURL=loggedin.js.map
 
 /***/ }),
 
-/***/ 108:
+/***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75,7 +89,7 @@ LoggedinPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(54);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -160,7 +174,7 @@ SignupPage = __decorate([
 
 /***/ }),
 
-/***/ 109:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -237,7 +251,7 @@ ResetpwdPage = __decorate([
 
 /***/ }),
 
-/***/ 117:
+/***/ 118:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -250,11 +264,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 117;
+webpackEmptyAsyncContext.id = 118;
 
 /***/ }),
 
-/***/ 158:
+/***/ 159:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -290,20 +304,20 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 158;
+webpackAsyncContext.id = 159;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 168:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact_contact__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loggedin_loggedin__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loggedin_loggedin__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -339,114 +353,6 @@ TabsPage = __decorate([
 
 /***/ }),
 
-/***/ 169:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__ = __webpack_require__(83);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var AboutPage = (function () {
-    function AboutPage(streamingMedia, navCtrl) {
-        this.streamingMedia = streamingMedia;
-        this.navCtrl = navCtrl;
-    }
-    AboutPage.prototype.play = function () {
-        var options = {
-            successCallback: function () { console.log('Finished Audio'); },
-            errorCallback: function (e) { console.log('Error: ', e); },
-            initFullscreen: false,
-        };
-        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/%E5%90%B4%E4%BA%A6%E5%87%A1%20-%20JULY.mp3', options);
-    };
-    AboutPage.prototype.play1 = function () {
-        var options = {
-            successCallback: function () { console.log('Finished Audio'); },
-            errorCallback: function (e) { console.log('Error: ', e); },
-            initFullscreen: false,
-        };
-        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Charlie%20Puth%20-%20Attention.mp3', options);
-    };
-    AboutPage.prototype.play2 = function () {
-        var options = {
-            successCallback: function () { console.log('Finished Audio'); },
-            errorCallback: function (e) { console.log('Error: ', e); },
-            initFullscreen: false,
-        };
-        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Ed%20Sheeran%20-%20Galway%20Girl.mp3', options);
-    };
-    AboutPage.prototype.play3 = function () {
-        var options = {
-            successCallback: function () { console.log('Finished Audio'); },
-            errorCallback: function (e) { console.log('Error: ', e); },
-            initFullscreen: false,
-        };
-        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Ed%20Sheeran%20-%20Shape%20of%20You.mp3', options);
-    };
-    AboutPage.prototype.play4 = function () {
-        var options = {
-            successCallback: function () { console.log('Finished Audio'); },
-            errorCallback: function (e) { console.log('Error: ', e); },
-            initFullscreen: false,
-        };
-        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Ed%20Sheeran%20-%20What%20Do%20I%20Know%EF%BC%9F.mp3', options);
-    };
-    AboutPage.prototype.play5 = function () {
-        var options = {
-            successCallback: function () { console.log('Finished Audio'); },
-            errorCallback: function (e) { console.log('Error: ', e); },
-            initFullscreen: false,
-        };
-        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Russ%20-%20Psycho%20(Pt.%202).mp3', options);
-    };
-    AboutPage.prototype.play6 = function () {
-        var options = {
-            successCallback: function () { console.log('Finished Audio'); },
-            errorCallback: function (e) { console.log('Error: ', e); },
-            initFullscreen: false,
-        };
-        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Charlie%20Puth,Selena%20Gomez%20-%20We%20Dont%20Talk%20Anymore.mp3', options);
-    };
-    AboutPage.prototype.stop = function () {
-        this.streamingMedia.stopAudio();
-    };
-    return AboutPage;
-}());
-AboutPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-about',template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar color="danger">\n      <ion-title >PlayList</ion-title>\n      <!-- <img src="assets/images/netMusicLogo1.png" class="hlogo" />\n      <ion-title>Music</ion-title> -->\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding id="music">\n    <ion-list>\n\n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-july.png">\n          </ion-thumbnail>\n          <h2>July</h2>\n          <p>Kris Wu • 2017</p>\n          <button ion-button (click)="play()" clear item-end>Play</button>\n          <button ion-button (click)="stop()" clear item-end>Stop</button>\n        </ion-item>\n\n        <ion-item>\n            <ion-thumbnail item-start>\n              <img src="assets/images/thumbnail-attention.png">\n            </ion-thumbnail>\n            <h2>Attention</h2>\n            <p>Charlie Puth • 2017</p>\n            <button ion-button (click)="play1()" clear item-end>Play</button>\n            <button ion-button (click)="stop()" clear item-end>Stop</button>\n          </ion-item>\n\n          <ion-item>\n              <ion-thumbnail item-start>\n                <img src="assets/images/thumbnail-galwaygirl.png">\n              </ion-thumbnail>\n              <h2>Galway Girl</h2>\n              <p>Ed Sheeran • 2017</p>\n              <button ion-button (click)="play2()" clear item-end>Play</button>\n              <button ion-button (click)="stop()" clear item-end>Stop</button>\n            </ion-item>\n\n            <ion-item>\n                <ion-thumbnail item-start>\n                  <img src="assets/images/thumbnail-galwaygirl.png">\n                </ion-thumbnail>\n                <h2>Shape of You</h2>\n                <p>Ed Sheeran • 2017</p>\n                <button ion-button (click)="play3()" clear item-end>Play</button>\n                <button ion-button (click)="stop()" clear item-end>Stop</button>\n              </ion-item>\n\n              <ion-item>\n                  <ion-thumbnail item-start>\n                    <img src="assets/images/thumbnail-galwaygirl.png">\n                  </ion-thumbnail>\n                  <h2>Galway Girl</h2>\n                  <p>Ed Sheeran • 2017</p>\n                  <button ion-button (click)="play4()" clear item-end>Play</button>\n                  <button ion-button (click)="stop()" clear item-end>Stop</button>\n                </ion-item>\n\n\n              <ion-item>\n                  <ion-thumbnail item-start>\n                    <img src="assets/images/thumbnail-psycho.png">\n                  </ion-thumbnail>\n                  <h2>Psycho</h2>\n                  <p>Rush • 2017</p>\n                  <button ion-button (click)="play5()" clear item-end>Play</button>\n                  <button ion-button (click)="stop()" clear item-end>Stop</button>\n                </ion-item>\n\n\n              <ion-item>\n                  <ion-thumbnail item-start>\n                    <img src="assets/images/thumbnail-weanymore.png">\n                  </ion-thumbnail>\n                  <h2>We Don\'t Talk Anymore</h2>\n                  <p>Charlie Puth • 2017</p>\n                  <button ion-button (click)="play6()" clear item-end>Play</button>\n                  <button ion-button (click)="stop()" clear item-end>Stop</button>\n                </ion-item>\n        <!-- <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-rotla.png">\n          </ion-thumbnail>\n          <h2>Raiders of the Lost Ark</h2>\n          <p>Steven Spielberg • 1981</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-ghostbusters.png">\n          </ion-thumbnail>\n          <h2>Ghostbusters</h2>\n          <p>Ivan Reitman • 1984</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-batman.png">\n          </ion-thumbnail>\n          <h2>Batman</h2>\n          <p>Tim Burton • 1988</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-bttf.png">\n          </ion-thumbnail>\n          <h2>Back to the Future</h2>\n          <p>Robert Zemeckis • 1985</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-esb.png">\n          </ion-thumbnail>\n          <h2>The Empire Strikes Back</h2>\n          <p>Irvin Kershner • 1980</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-terminator.png">\n          </ion-thumbnail>\n          <h2>The Terminator</h2>\n          <p>James Cameron • 1984</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n     -->\n      </ion-list>\n</ion-content>\n\n\n<!-- <ion-list>\n  <ion-item>\n      <button ion-button class="circle" color="danger" small>\n          <ion-icon name=\'skip-backward\'></ion-icon>\n        </button>\n\n      <button ion-button (click)="playAudio()"  class="circle" color="danger" icon-only  small>\n          <ion-icon name=\'play\' style="zoom:1.0;"></ion-icon>\n          <!-- style="zoom:1.0;" and small: setting icon size -->\n        <!-- </button>\n        <button ion-button (click)="stopAudio()"  class="circle" color="danger" icon-only  small>\n          <ion-icon name=\'pause\' style="zoom:1.0;"></ion-icon>\n          <!-- style="zoom:1.0;" and small: setting icon size -->\n        <!-- </button> -->\n\n        <!-- <button ion-button  class="circle" color="danger">\n            <ion-icon name=\'skip-forward\'></ion-icon>\n          </button> -->\n  <!-- </ion-item>\n</ion-list> -->'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/about/about.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__["a" /* StreamingMedia */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
-], AboutPage);
-
-// playAudio(){
-//   let options: StreamingAudioOptions = {
-//     successCallback: () => {console.log('Finished Audio')},
-//     errorCallback: (e) => {console.log('Error: ', e)},
-//     initFullscreen: false, // IOS only!
-//   };
-//   this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/%E5%90%B4%E4%BA%A6%E5%87%A1%20-%20JULY.mp3', options);
-// }
-// stopAudio(){
-//   this.streamingMedia.stopAudio();
-// } 
-//# sourceMappingURL=about.js.map
-
-/***/ }),
-
 /***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -454,7 +360,7 @@ AboutPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__ = __webpack_require__(49);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -497,7 +403,7 @@ var ContactPage = (function () {
 }());
 ContactPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-contact',template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/contact/contact.html"*/'<ion-header>\n    <ion-navbar>\n      <script src="lib/ngCordova/dist/ng-cordova.js"></script>\n      <script src="cordova.js"></script>\n        <img src="assets/images/netMusicLogo1.png" class="hlogo" />\n        <ion-title>Contact</ion-title>\n      </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <button ion-button full (click)="startVideo()">Start Video</button>\n    <button ion-button full (click)="startAudio()">Start Audio</button>\n    <button ion-button full (click)="stopAudio()" color="danger">Stop Audio</button>\n    <!-- <ion-list-header>Follow us on Twitter</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item-start></ion-icon>\n      @ionicframework\n    </ion-item> -->\n</ion-content>\n'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/contact/contact.html"*/
+        selector: 'page-contact',template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/contact/contact.html"*/'<ion-header>\n    <ion-navbar color="danger">\n      <script src="lib/ngCordova/dist/ng-cordova.js"></script>\n      <script src="cordova.js"></script>\n        <img src="assets/images/netMusicLogo1.png" class="hlogo" />\n        <ion-title>Contact</ion-title>\n      </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <button ion-button full (click)="startVideo()">Start Video</button>\n    <button ion-button full (click)="startAudio()">Start Audio</button>\n    <button ion-button full (click)="stopAudio()" color="danger">Stop Audio</button>\n    <!-- <ion-list-header>Follow us on Twitter</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item-start></ion-icon>\n      @ionicframework\n    </ion-item> -->\n</ion-content>\n'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/contact/contact.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__["a" /* StreamingMedia */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
 ], ContactPage);
@@ -537,19 +443,19 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(316);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_welcome_welcome__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_loggedin_loggedin__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_signup_signup__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_resetpwd_resetpwd__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_loggedin_loggedin__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_signup_signup__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_resetpwd_resetpwd__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_auth__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_about_about__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_about_about__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_contact_contact__ = __webpack_require__(171);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_home_home__ = __webpack_require__(317);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_tabs_tabs__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_tabs_tabs__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_status_bar__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_splash_screen__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_streaming_media__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_streaming_media__ = __webpack_require__(49);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -753,9 +659,9 @@ HomePage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WelcomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__signup_signup__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resetpwd_resetpwd__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__signup_signup__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resetpwd_resetpwd__ = __webpack_require__(110);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -830,7 +736,7 @@ WelcomePage = __decorate([
 
 /***/ }),
 
-/***/ 53:
+/***/ 54:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -838,7 +744,7 @@ WelcomePage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(169);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -884,7 +790,7 @@ var LoginPage = (function () {
         this.fire.auth.signInWithEmailAndPassword(this.uname.value, this.password.value)
             .then(function (data) {
             console.log('got some data', _this.fire.auth.currentUser); //在console传出当前账号用户的信息.
-            _this.alert('Success! You are logged in'); //套用当前文件的alert()function中的message,弹窗信息.
+            _this.alert('Welcome to NetMusic ' + _this.fire.auth.currentUser.email); //套用当前文件的alert()function中的message,弹窗信息.
             _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__tabs_tabs__["a" /* TabsPage */]); // 定向导航到LoggedinPage,且不可返回。如想要返回: 改用navCtrl.push()
             // 设置当前导航堆栈的根目录.可以把LoggedinPage更改为播放器主界面.
             // setRoot(): 只是view之间的切换，不带有任何返回button之类的东西。 不能返回的
@@ -933,6 +839,122 @@ LoginPage = __decorate([
 ], LoginPage);
 
 //# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 84:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__ = __webpack_require__(49);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AboutPage = (function () {
+    function AboutPage(streamingMedia, navCtrl) {
+        this.streamingMedia = streamingMedia;
+        this.navCtrl = navCtrl;
+    }
+    AboutPage.prototype.play = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/%E5%90%B4%E4%BA%A6%E5%87%A1%20-%20JULY.mp3', options);
+    };
+    AboutPage.prototype.play1 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Charlie%20Puth%20-%20Attention.mp3', options);
+    };
+    AboutPage.prototype.play2 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Ed%20Sheeran%20-%20Galway%20Girl.mp3', options);
+    };
+    AboutPage.prototype.play3 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Ed%20Sheeran%20-%20Shape%20of%20You.mp3', options);
+    };
+    AboutPage.prototype.play4 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Ed%20Sheeran%20-%20What%20Do%20I%20Know%EF%BC%9F.mp3', options);
+    };
+    AboutPage.prototype.play5 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Russ%20-%20Psycho%20(Pt.%202).mp3', options);
+    };
+    AboutPage.prototype.play6 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Charlie%20Puth,Selena%20Gomez%20-%20We%20Dont%20Talk%20Anymore.mp3', options);
+    };
+    AboutPage.prototype.play7 = function () {
+        var options = {
+            successCallback: function () { console.log('Finished Audio'); },
+            errorCallback: function (e) { console.log('Error: ', e); },
+            initFullscreen: false,
+        };
+        this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/Linkin%20Park%20-%20Leave%20Out%20All%20the%20Rest%20(One%20More%20Light%20Live).mp3', options);
+    };
+    AboutPage.prototype.stop = function () {
+        this.streamingMedia.stopAudio();
+    };
+    return AboutPage;
+}());
+AboutPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-about',template:/*ion-inline-start:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar color="danger">\n      <ion-title >PlayList</ion-title>\n      <!-- <img src="assets/images/netMusicLogo1.png" class="hlogo" />\n      <ion-title>Music</ion-title> -->\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding id="music">\n    <ion-list>\n\n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-july.png">\n          </ion-thumbnail>\n          <h2>July</h2>\n          <p>Kris Wu • 2017</p>\n          <button ion-button (click)="play()" clear item-end>Play</button>\n          <button ion-button (click)="stop()" clear item-end>Stop</button>\n        </ion-item>\n\n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/link.png">\n          </ion-thumbnail>\n          <h2>Leave Out All the Rest</h2>\n          <p>Linkin Park • 2017</p>\n          <button ion-button (click)="play7()" clear item-end>Play</button>\n          <button ion-button (click)="stop()" clear item-end>Stop</button>\n        </ion-item>\n\n        <ion-item>\n            <ion-thumbnail item-start>\n              <img src="assets/images/thumbnail-attention.png">\n            </ion-thumbnail>\n            <h2>Attention</h2>\n            <p>Charlie Puth • 2017</p>\n            <button ion-button (click)="play1()" clear item-end>Play</button>\n            <button ion-button (click)="stop()" clear item-end>Stop</button>\n          </ion-item>\n\n          <ion-item>\n              <ion-thumbnail item-start>\n                <img src="assets/images/thumbnail-galwaygirl.png">\n              </ion-thumbnail>\n              <h2>Galway Girl</h2>\n              <p>Ed Sheeran • 2017</p>\n              <button ion-button (click)="play2()" clear item-end>Play</button>\n              <button ion-button (click)="stop()" clear item-end>Stop</button>\n            </ion-item>\n\n            <ion-item>\n                <ion-thumbnail item-start>\n                  <img src="assets/images/thumbnail-galwaygirl.png">\n                </ion-thumbnail>\n                <h2>Shape of You</h2>\n                <p>Ed Sheeran • 2017</p>\n                <button ion-button (click)="play3()" clear item-end>Play</button>\n                <button ion-button (click)="stop()" clear item-end>Stop</button>\n              </ion-item>\n\n              <ion-item>\n                  <ion-thumbnail item-start>\n                    <img src="assets/images/thumbnail-galwaygirl.png">\n                  </ion-thumbnail>\n                  <h2>Galway Girl</h2>\n                  <p>Ed Sheeran • 2017</p>\n                  <button ion-button (click)="play4()" clear item-end>Play</button>\n                  <button ion-button (click)="stop()" clear item-end>Stop</button>\n                </ion-item>\n\n\n              <ion-item>\n                  <ion-thumbnail item-start>\n                    <img src="assets/images/thumbnail-psycho.png">\n                  </ion-thumbnail>\n                  <h2>Psycho</h2>\n                  <p>Rush • 2017</p>\n                  <button ion-button (click)="play5()" clear item-end>Play</button>\n                  <button ion-button (click)="stop()" clear item-end>Stop</button>\n                </ion-item>\n\n\n              <ion-item>\n                  <ion-thumbnail item-start>\n                    <img src="assets/images/thumbnail-weanymore.png">\n                  </ion-thumbnail>\n                  <h2>We Don\'t Talk Anymore</h2>\n                  <p>Charlie Puth • 2017</p>\n                  <button ion-button (click)="play6()" clear item-end>Play</button>\n                  <button ion-button (click)="stop()" clear item-end>Stop</button>\n                </ion-item>\n        <!-- <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-rotla.png">\n          </ion-thumbnail>\n          <h2>Raiders of the Lost Ark</h2>\n          <p>Steven Spielberg • 1981</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-ghostbusters.png">\n          </ion-thumbnail>\n          <h2>Ghostbusters</h2>\n          <p>Ivan Reitman • 1984</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-batman.png">\n          </ion-thumbnail>\n          <h2>Batman</h2>\n          <p>Tim Burton • 1988</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-bttf.png">\n          </ion-thumbnail>\n          <h2>Back to the Future</h2>\n          <p>Robert Zemeckis • 1985</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-esb.png">\n          </ion-thumbnail>\n          <h2>The Empire Strikes Back</h2>\n          <p>Irvin Kershner • 1980</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n    \n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="assets/images/thumbnail-terminator.png">\n          </ion-thumbnail>\n          <h2>The Terminator</h2>\n          <p>James Cameron • 1984</p>\n          <button ion-button clear item-end>Play</button>\n        </ion-item>\n     -->\n      </ion-list>\n</ion-content>\n\n\n<!-- <ion-list>\n  <ion-item>\n      <button ion-button class="circle" color="danger" small>\n          <ion-icon name=\'skip-backward\'></ion-icon>\n        </button>\n\n      <button ion-button (click)="playAudio()"  class="circle" color="danger" icon-only  small>\n          <ion-icon name=\'play\' style="zoom:1.0;"></ion-icon>\n          <!-- style="zoom:1.0;" and small: setting icon size -->\n        <!-- </button>\n        <button ion-button (click)="stopAudio()"  class="circle" color="danger" icon-only  small>\n          <ion-icon name=\'pause\' style="zoom:1.0;"></ion-icon>\n          <!-- style="zoom:1.0;" and small: setting icon size -->\n        <!-- </button> -->\n\n        <!-- <button ion-button  class="circle" color="danger">\n            <ion-icon name=\'skip-forward\'></ion-icon>\n          </button> -->\n  <!-- </ion-item>\n</ion-list> -->'/*ion-inline-end:"/Users/weichenwang/Year4/Final-Project-Year4/src/pages/about/about.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__["a" /* StreamingMedia */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
+], AboutPage);
+
+// playAudio(){
+//   let options: StreamingAudioOptions = {
+//     successCallback: () => {console.log('Finished Audio')},
+//     errorCallback: (e) => {console.log('Error: ', e)},
+//     initFullscreen: false, // IOS only!
+//   };
+//   this.streamingMedia.playAudio('file:///Users/weichenwang/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/%E5%90%B4%E4%BA%A6%E5%87%A1%20-%20JULY.mp3', options);
+// }
+// stopAudio(){
+//   this.streamingMedia.stopAudio();
+// } 
+//# sourceMappingURL=about.js.map
 
 /***/ })
 
