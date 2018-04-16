@@ -79,8 +79,6 @@ const firebaseAuth = {  //firebase登陆方法配置
     LoadingController,
     StreamingMedia,
     App,
-    // Media,
-    // MediaObject,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

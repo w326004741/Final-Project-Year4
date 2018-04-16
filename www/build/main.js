@@ -130,6 +130,13 @@ var SignupPage = (function () {
             buttons: ['OK']
         }).present();
     };
+    SignupPage.prototype.alert1 = function (message) {
+        this.alertCtrl.create({
+            title: 'Dear User :🎉',
+            subTitle: 'Registered!',
+            buttons: ['OK']
+        }).present();
+    };
     SignupPage.prototype.signup = function () {
         var _this = this;
         //Api connections
@@ -139,7 +146,7 @@ var SignupPage = (function () {
         this.fire.auth.createUserWithEmailAndPassword(this.uname.value, this.password.value)
             .then(function (data) {
             console.log('got data', _this.fire.auth.currentUser);
-            _this.alert('Registered!');
+            _this.alert1('Registered!');
             _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__login_login__["a" /* LoginPage */]);
             var loader = _this.loadingCtrl.create({
                 content: "Please wait...",
@@ -386,7 +393,7 @@ var ContactPage = (function () {
             errorCallback: function (e) { console.log('Error: ', e); },
             orientation: 'portrait'
         };
-        this.streamingMedia.playVideo('http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4', options);
+        this.streamingMedia.playVideo('file:///Users/weichenwang/Downloads/Leave%20out%20all%20the%20rest.MOV', options);
     };
     ContactPage.prototype.startAudio = function () {
         var options = {
@@ -551,8 +558,6 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_17__ionic_native_streaming_media__["a" /* StreamingMedia */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* App */],
-            // Media,
-            // MediaObject,
             { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] }
         ]
     })

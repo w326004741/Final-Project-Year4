@@ -18,7 +18,7 @@ export class ContactPage {
       errorCallback: (e) => {console.log('Error: ', e)},
       orientation: 'portrait'
     };
-    this.streamingMedia.playVideo('http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4', options);
+    this.streamingMedia.playVideo('file:///Users/weichenwang/Downloads/Leave%20out%20all%20the%20rest.MOV', options);
   }
   startAudio(){
     let options: StreamingAudioOptions = {

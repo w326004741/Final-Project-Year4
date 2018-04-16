@@ -43,6 +43,13 @@ export class SignupPage {
          buttons: ['OK']
     }).present();
   }
+  alert1(message: string){
+    this.alertCtrl.create({
+      title: 'Dear User :🎉',
+         subTitle: 'Registered!',
+         buttons: ['OK']
+    }).present();
+  }
 
 
   signup(){       //registerUser()
@@ -53,7 +60,7 @@ export class SignupPage {
     this.fire.auth.createUserWithEmailAndPassword(this.uname.value, this.password.value)
     .then(data => {
        console.log('got data', this.fire.auth.currentUser);
-       this.alert('Registered!');
+       this.alert1('Registered!');
        this.navCtrl.push(LoginPage);
        let loader = this.loadingCtrl.create({
         content: "Please wait...",
