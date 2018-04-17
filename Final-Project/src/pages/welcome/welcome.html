@@ -1,0 +1,29 @@
+<!--
+  Generated template for the WelcomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <!--color is 给标题块加颜色-->
+  <ion-navbar color="primary">
+      <img src="assets/images/netMusicLogo1.png" class="hlogo" /><ion-title>🎶 Net Music 🎶</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="welcome" >
+    <img src="assets/images/netMusicLogo1.png" class="wlogo" />
+    <!--Big Title-->
+    <h2> Welcome to Net Music </h2>
+    <!--describe-->
+    <div> Enjoy best music </div>
+    <!--Button setting style, class写在.scss文件里，click event-->
+    <div id="Buttons">
+    <button ion-button full class="marginTop" (click)="login()">Login</button>
+    <button ion-button block outline  (click)="signup()">Register</button>
+    <button ion-button block clear (click)="resetpwd()">Reset Password</button>
+    </div>
+  
+  </ion-content>

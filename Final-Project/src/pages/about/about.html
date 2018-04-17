@@ -1,0 +1,170 @@
+<ion-header>
+  <ion-navbar color="danger">
+      <ion-title >PlayList</ion-title>
+      <!-- <img src="assets/images/netMusicLogo1.png" class="hlogo" />
+      <ion-title>Music</ion-title> -->
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding id="music">
+    <ion-list>
+
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/images/thumbnail-july.png">
+          </ion-thumbnail>
+          <h2>July</h2>
+          <p>Kris Wu • 2017</p>
+          <button ion-button (click)="play()" clear item-end>Play</button>
+          <button ion-button (click)="stop()" clear item-end>Stop</button>
+        </ion-item>
+
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/images/link.png">
+          </ion-thumbnail>
+          <h2>Leave Out All the Rest</h2>
+          <p>Linkin Park • 2017</p>
+          <button ion-button (click)="play7()" clear item-end>Play</button>
+          <button ion-button (click)="stop()" clear item-end>Stop</button>
+        </ion-item>
+
+        <ion-item>
+            <ion-thumbnail item-start>
+              <img src="assets/images/thumbnail-attention.png">
+            </ion-thumbnail>
+            <h2>Attention</h2>
+            <p>Charlie Puth • 2017</p>
+            <button ion-button (click)="play1()" clear item-end>Play</button>
+            <button ion-button (click)="stop()" clear item-end>Stop</button>
+          </ion-item>
+
+          <ion-item>
+              <ion-thumbnail item-start>
+                <img src="assets/images/thumbnail-galwaygirl.png">
+              </ion-thumbnail>
+              <h2>Galway Girl</h2>
+              <p>Ed Sheeran • 2017</p>
+              <button ion-button (click)="play2()" clear item-end>Play</button>
+              <button ion-button (click)="stop()" clear item-end>Stop</button>
+            </ion-item>
+
+            <ion-item>
+                <ion-thumbnail item-start>
+                  <img src="assets/images/thumbnail-galwaygirl.png">
+                </ion-thumbnail>
+                <h2>Shape of You</h2>
+                <p>Ed Sheeran • 2017</p>
+                <button ion-button (click)="play3()" clear item-end>Play</button>
+                <button ion-button (click)="stop()" clear item-end>Stop</button>
+              </ion-item>
+
+              <ion-item>
+                  <ion-thumbnail item-start>
+                    <img src="assets/images/thumbnail-galwaygirl.png">
+                  </ion-thumbnail>
+                  <h2>Galway Girl</h2>
+                  <p>Ed Sheeran • 2017</p>
+                  <button ion-button (click)="play4()" clear item-end>Play</button>
+                  <button ion-button (click)="stop()" clear item-end>Stop</button>
+                </ion-item>
+
+
+              <ion-item>
+                  <ion-thumbnail item-start>
+                    <img src="assets/images/thumbnail-psycho.png">
+                  </ion-thumbnail>
+                  <h2>Psycho</h2>
+                  <p>Rush • 2017</p>
+                  <button ion-button (click)="play5()" clear item-end>Play</button>
+                  <button ion-button (click)="stop()" clear item-end>Stop</button>
+                </ion-item>
+
+
+              <ion-item>
+                  <ion-thumbnail item-start>
+                    <img src="assets/images/thumbnail-weanymore.png">
+                  </ion-thumbnail>
+                  <h2>We Don't Talk Anymore</h2>
+                  <p>Charlie Puth • 2017</p>
+                  <button ion-button (click)="play6()" clear item-end>Play</button>
+                  <button ion-button (click)="stop()" clear item-end>Stop</button>
+                </ion-item>
+        <!-- <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/images/thumbnail-rotla.png">
+          </ion-thumbnail>
+          <h2>Raiders of the Lost Ark</h2>
+          <p>Steven Spielberg • 1981</p>
+          <button ion-button clear item-end>Play</button>
+        </ion-item>
+    
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/images/thumbnail-ghostbusters.png">
+          </ion-thumbnail>
+          <h2>Ghostbusters</h2>
+          <p>Ivan Reitman • 1984</p>
+          <button ion-button clear item-end>Play</button>
+        </ion-item>
+    
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/images/thumbnail-batman.png">
+          </ion-thumbnail>
+          <h2>Batman</h2>
+          <p>Tim Burton • 1988</p>
+          <button ion-button clear item-end>Play</button>
+        </ion-item>
+    
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/images/thumbnail-bttf.png">
+          </ion-thumbnail>
+          <h2>Back to the Future</h2>
+          <p>Robert Zemeckis • 1985</p>
+          <button ion-button clear item-end>Play</button>
+        </ion-item>
+    
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/images/thumbnail-esb.png">
+          </ion-thumbnail>
+          <h2>The Empire Strikes Back</h2>
+          <p>Irvin Kershner • 1980</p>
+          <button ion-button clear item-end>Play</button>
+        </ion-item>
+    
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/images/thumbnail-terminator.png">
+          </ion-thumbnail>
+          <h2>The Terminator</h2>
+          <p>James Cameron • 1984</p>
+          <button ion-button clear item-end>Play</button>
+        </ion-item>
+     -->
+      </ion-list>
+</ion-content>
+
+
+<!-- <ion-list>
+  <ion-item>
+      <button ion-button class="circle" color="danger" small>
+          <ion-icon name='skip-backward'></ion-icon>
+        </button>
+
+      <button ion-button (click)="playAudio()"  class="circle" color="danger" icon-only  small>
+          <ion-icon name='play' style="zoom:1.0;"></ion-icon>
+          <!-- style="zoom:1.0;" and small: setting icon size -->
+        <!-- </button>
+        <button ion-button (click)="stopAudio()"  class="circle" color="danger" icon-only  small>
+          <ion-icon name='pause' style="zoom:1.0;"></ion-icon>
+          <!-- style="zoom:1.0;" and small: setting icon size -->
+        <!-- </button> -->
+
+        <!-- <button ion-button  class="circle" color="danger">
+            <ion-icon name='skip-forward'></ion-icon>
+          </button> -->
+  <!-- </ion-item>
+</ion-list> -->
