@@ -1,8 +1,10 @@
 # Net Music Player  
-> Supervisor - Kevin O'Brien     
-> by - [Weichen Wang](https://github.com/w326004741)      
+> Module - Applied Project and Minor Dissertation / 4th Year      
+> Supervisor - Kevin O'Brien           
 > [Final Project Year4 and Minor Disseration](https://github.com/w326004741/Final-Project-Year4/tree/master/Final%20Year%20Minor%20Dissertation)      
-> Youtube Link - https://www.youtube.com/watch?v=ZgPW87Lhnno    
+> Video Link - https://www.youtube.com/watch?v=ZgPW87Lhnno    
+
+> by - [Weichen Wang](https://github.com/w326004741)
 
 ## Overview
 This is a Music Player of mobile app project with [Node.js](https://nodejs.org/en/), uses [Ionic3 framework](https://ionicframework.com/), [Google Firebase](https://firebase.google.com/) as a database, [Heroku](https://www.heroku.com/platform) as a cloud deploy platform, [Visual Studio Code](https://code.visualstudio.com/) as a code editor and test execution.
