@@ -46,33 +46,58 @@ cd your folder(Final-Project-Year4)
 
 - Run and Test the Application Using the [XCode](https://developer.apple.com/xcode/) Simulator
 
+## What is Ionic Framework?
+Ionic Framework is a complete open-source SDK for hybrid mobile app development. The more recent releases, known as Ionic 3 or simply "Ionic", are built on Angular. Ionic provides tools and services for developing hybrid mobile apps using Web technologies like CSS, HTML5, and Sass. Apps can be built with these Web technologies and then distributed through native app stores to be installed on devices by leveraging Cordova.
 
-## How to use this template
+## Architecture
+The UI design of the page is based on [Ionic Native UI Component](https://ionicframework.com/docs/components/).  For example: button, loading, alert, page navigation, Music Card, Toast Notification, thumbnail, etc.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+The project is based on the Ionic3 framework. Firebase is the database of the user management system. The login system is based on Firebase authentication, including Login, Sign up, and Reset Password.
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+The tabs control the conversion between three main pages.  These pages mainly implement music play, stop and video play.  Function implement based on [Ionic Native Plug-in](https://ionicframework.com/docs/native/) Streaming Media.
 
-### With the Ionic CLI:
+![image](https://github.com/w326004741/Final-Project-Year4/blob/master/image/ionicSystem.png)
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+![image](https://github.com/w326004741/Final-Project-Year4/blob/master/image/4301524152100_.pic_hd.jpg)
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myTabs tabs
+## Firebase Authentication:
+Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app. It supports authentication using passwords, phone numbers, popular federated identity providers like Google, Facebook and Twitter, and more.
+
+### How does it work?
+To sign a user into your app, you first get authentication credentials from the user. These credentials can be the user's email address and password, or an OAuth token from a federated identity provider. Then, you pass these credentials to the Firebase Authentication SDK. Our backend services will then verify those credentials and return a response to the client.
+
+```html
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCWyA_drTwdJ-_N8OA2vajNXfvKxyzh9ks",
+    authDomain: "netmusic-c9a02.firebaseapp.com",
+    databaseURL: "https://netmusic-c9a02.firebaseio.com",
+    projectId: "netmusic-c9a02",
+    storageBucket: "netmusic-c9a02.appspot.com",
+    messagingSenderId: "971450191473"
+  };
+  firebase.initializeApp(config);
+</script>
 ```
+![image](https://github.com/w326004741/Final-Project-Year4/blob/master/image/firebaseauth5.png)
 
-Then, to run it, cd into `myTabs` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
-
-
+## Function Code:
+#### Login:
+![image](https://github.com/w326004741/Final-Project-Year4/blob/master/image/Loginfunction.png)
+#### Sign Up:
+![image](https://github.com/w326004741/Final-Project-Year4/blob/master/image/Registerfunction.png)
+#### Reset Password:
+![image](https://github.com/w326004741/Final-Project-Year4/blob/master/image/resetPasswordfunction.png)
+#### Logout:
+![image](https://github.com/w326004741/Final-Project-Year4/blob/master/image/logout.png)
+#### Play Audio: 
+![image](https://github.com/w326004741/Final-Project-Year4/blob/master/image/playAudio.png)
+#### Stop Audio:
+![image](https://github.com/w326004741/Final-Project-Year4/blob/master/image/stopAudio.png)
+#### Play Video:
+![image](https://github.com/w326004741/Final-Project-Year4/blob/master/image/playVideo.png)
 ## Reference
 [Solution of deploy a Web App of Ionic3 Project to Heroku](https://stackoverflow.com/questions/43701033/ionic-pwa-deploy/43701116)
 
