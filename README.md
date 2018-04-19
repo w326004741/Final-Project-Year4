@@ -8,7 +8,7 @@
 
 ## Table of Contents:
 1. [Overview](#overview)
-2. [Nedd Components](#need-components)
+2. [Need Components](#need-components)
 3. [How to use this repository](#how-to-use-this-repository)
 4. [How to Run](#how-to-run)
 5. [What is Ionic Framework?](#what-is-ionic-framework)
