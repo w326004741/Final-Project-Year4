@@ -1,8 +1,49 @@
-# Final-Project-Year4   
+# Net Music Player  
+> Supervisor - Kevin O'Brien     
 > by - [Weichen Wang](https://github.com/w326004741)      
+> [Final Project Year4 and Minor Disseration](https://github.com/w326004741/Final-Project-Year4/tree/master/Final%20Year%20Minor%20Dissertation)      
 > Youtube Link - https://www.youtube.com/watch?v=ZgPW87Lhnno    
 
-This is a music player web app for [Ionic](http://ionicframework.com/docs/) projects.
+## Overview
+This is a Music Player of mobile app project with [Node.js](https://nodejs.org/en/), uses [Ionic3 framework](https://ionicframework.com/), [Google Firebase](https://firebase.google.com/) as a database, [Heroku](https://www.heroku.com/platform) as a cloud deploy platform, [Visual Studio Code](https://code.visualstudio.com/) as a code editor and test execution.
+
+## Need Components:
+-  [Ionic Framework](https://ionicframework.com/getting-started)
+-  [XCode](https://developer.apple.com/xcode/)
+-  [Visual Studio Code](https://code.visualstudio.com/)
+-  [Node.js](https://nodejs.org/en/)
+
+
+## How to use this repository:
+#### [Get started with Ionic Framework](https://ionicframework.com/getting-started)
+
+#### 1. Install Ionic: 
+```
+npm install -g ionic
+```
+
+First, install [Node.js](https://nodejs.org/en/). Then, install the latest Ionic command-line tools in your terminal. Follow the [Android](https://cordova.apache.org/docs/en/7.x/guide/platforms/android/) and [iOS](https://cordova.apache.org/docs/en/7.x/guide/platforms/ios/) platform guides to install required tools for development.(**The IOS platform must be installed**.)
+
+
+2. Click Clone or Download or Copy to clipboard.
+3. Enter your Terminal(for mac) or cmd(for windows), and following below:
+```
+# Change directory to anywhere just you like put
+cd anywhere.....
+
+# Clone this repository
+git clone https://github.com/w326004741/Final-Project-Year4.git
+&
+cd your folder(Final-Project-Year4)
+
+# Enter `code .` in your terminal(open visual studio code)
+```
+
+## How to Run:
+- In the [Visual Studio Code](https://code.visualstudio.com/) Terminal(cmd+shift+Y for Mac) Enter: `Ionic cordova ios run`.       
+
+- Run and Test the Application Using the [XCode](https://developer.apple.com/xcode/) Simulator
+
 
 ## How to use this template
 
