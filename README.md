@@ -6,6 +6,16 @@
 
 > by - [Weichen Wang](https://github.com/w326004741)
 
+## Table of Contents:
+1. [Overview](#overview)
+2. [Nedd Components](#need-components)
+3. [How to use this repository](#how-to-use-this-repository)
+4. [How to Run](#how-to-run)
+5. [What is Ionic Framework?](#what-is-ionic-framework)
+6. [Architecture](#architecture)
+7. [Firebase Authentication](#firebase-authentication)
+8. [Function Code](#function-code)
+9. [Reference](#reference)
 ## Overview
 This is a Music Player of mobile app project with [Node.js](https://nodejs.org/en/), uses [Ionic3 framework](https://ionicframework.com/), [Google Firebase](https://firebase.google.com/) as a database, [Heroku](https://www.heroku.com/platform) as a cloud deploy platform, [Visual Studio Code](https://code.visualstudio.com/) as a code editor and test execution.
 
@@ -99,7 +109,16 @@ To sign a user into your app, you first get authentication credentials from the 
 #### Play Video:
 ![image](https://github.com/w326004741/Final-Project-Year4/blob/master/image/playVideo.png)
 ## Reference
-[Solution of deploy a Web App of Ionic3 Project to Heroku](https://stackoverflow.com/questions/43701033/ionic-pwa-deploy/43701116)
+- [Solution of deploy a Web App of Ionic3 Project to Heroku](https://stackoverflow.com/questions/43701033/ionic-pwa-deploy/43701116)
+
+- [Node.js](https://nodejs.org/en/)     
+- [Ionic3 framework](https://ionicframework.com/)      
+- [Google Firebase](https://firebase.google.com/)     
+- [Heroku](https://www.heroku.com/platform)     
+- [Visual Studio Code](https://code.visualstudio.com/)      
+- [Ionic Native UI Component](https://ionicframework.com/docs/components/)      
+- [Ionic Native Plug-in](https://ionicframework.com/docs/native/)
+
 
 ## Question
 ###### *update at 2018/2/13*
